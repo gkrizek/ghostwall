@@ -1,0 +1,70 @@
+<template name="myghosts">
+<nav id="c-menu--push-left" class="c-menu c-menu--push-left">
+  <ul class="c-menu__items">
+    <li class="c-menu__item"><a href="/ghostwall" onclick="clearOverflow()" class="c-menu__link">Ghostwall</a></li>
+    <li class="c-menu__item"><a href="/ghostchat" onclick="clearOverflow()" class="c-menu__link">Ghostchat</a></li>
+    {{#if newMessage true}}
+    <li class="c-menu__item"><a href="/contacts" onclick="clearOverflow()" class="c-menu__link" style="color: #f7931d">Messages</a></li>
+    {{else}}
+    <li class="c-menu__item"><a href="/contacts" onclick="clearOverflow()" class="c-menu__link">Messages</a></li>
+    {{/if}}
+    <li class="c-menu__item"><a href="/myghosts" onclick="clearOverflow()" class="c-menu__link">My Ghosts</a></li>
+    <li class="c-menu__item"><a href="/people" onclick="clearOverflow()" class="c-menu__link">People</a></li>
+     <li class="c-menu__item"><a href="/account" onclick="clearOverflow()" class="c-menu__link">Account</a></li>
+     <li class="c-menu__item"><a href="/report" onclick="clearOverflow()" class="c-menu__link">Report</a></li>
+     <li class="c-menu__item"><a href="/support" onclick="clearOverflow()" class="c-menu__link">Support</a></li>
+     <li class="c-menu__item"><a href="#" id="logout" onclick="clearOverflow()" class="c-menu__link">Logout</a></li>
+     <li class="c-menu__item"><a class="c-menu__link" id="version">v0.0.1</a></li>
+  </ul>
+</nav>
+<div id="c-mask" class="c-mask"></div><!-- /c-mask -->
+<div class="top-wrap" id="top-wrap">
+<nav id="toolbar" class="toolbar">
+    <a href="#" id="c-button--push-left" class="c-button"><img id="menuicon" src="/menu.svg"></a>
+    <a id="ghostheader">my ghosts</a>
+    <a href="/camera"><img id="cameraicon" src="/camera.svg"></a>
+    {{#if toggle}}
+    <div id="toggle"><a href="#"><div id="top" style="color: #f7931d">top</div></a><a href="#"><div id="new" style="color: #663399;">new</div></a></div>
+    {{else}}
+    <div id="toggle"><a href="#"><div id="top" style="color: #663399;">top</div></a><a href="#"><div id="new" style="color: #f7931d">new</div></a></div>
+    {{/if}}
+</nav>
+</div>
+<div class="site-wrap" id="site-wrap">
+{{#each photo}}
+<script type="text/javascript">
+    setTimeout(function(){
+    var textLength = $('.{{_id}}').html().length;
+        if (textLength > 30) {
+            $('.{{_id}}').css('font-size', '1.25em');
+        }
+        if (textLength > 50) {
+            $('.{{_id}}').css('font-size', '1em');
+        }
+        if (textLength > 75) {
+            $('.{{_id}}').css('font-size', '0.75em');
+        }
+    }, 10);
+
+</script>
+<br />
+<div id="eachGhost">
+<div id="ghostDiv"></div>
+<img id="ghostMessage" src="/delete-purple.svg">
+<div id="surroundViewersMy"><div>Views:</div><div id="ghostViewers">{{views}}</div></div>
+<div id="surroundPointsMy"><div>Points:</div><div id="ghostPointsMy">{{points}}</div></div>
+<div id="ghostTitleMy" class="{{_id}}">{{title}}</div>
+<div id="ghostBottom"><div id="ghostAge">age: {{moFromNow createdAt withoutSuffix=true}}</div><div id="ghostType"><img src="/{{type}}.svg"></div></div>
+</div>
+{{#if checkPhoto type}}
+<div class="ghost-image" id="ghost-{{_id}}" style="visibility: hidden;"><img src="{{url}}"></div>
+{{else}}
+<div class="ghost-image" id="ghost-{{_id}}" style="visibility: hidden;"><video loop webkit-playsinline src="{{url}}" type='video/mov' id="ghostvideo-{{_id}}"></video></div>
+{{/if}}
+{{else}}
+<div id="nomyghosts"><center>You don't have any ghosts!<br /><a href="/camera">Click here to post a new ghost</a></center></div>
+{{/each}}
+<br />
+</div>
+<script type="text/javascript" src="/menu-push.js"></script>
+</template>

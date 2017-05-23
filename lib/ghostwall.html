@@ -1,0 +1,90 @@
+<template name="ghostwall">
+
+<nav id="c-menu--push-left" class="c-menu c-menu--push-left">
+  <ul class="c-menu__items">
+    <li class="c-menu__item"><a href="/ghostwall" onclick="clearOverflow()" class="c-menu__link">Ghostwall</a></li>
+    <li class="c-menu__item"><a href="/ghostchat" onclick="clearOverflow()" class="c-menu__link">Ghostchat</a></li>
+    {{#if newMessage true}}
+    <li class="c-menu__item"><a href="/contacts" onclick="clearOverflow()" class="c-menu__link" style="color: #f7931d">Messages</a></li>
+    {{else}}
+    <li class="c-menu__item"><a href="/contacts" onclick="clearOverflow()" class="c-menu__link">Messages</a></li>
+    {{/if}}
+    <li class="c-menu__item"><a href="/myghosts" onclick="clearOverflow()" class="c-menu__link">My Ghosts</a></li>
+    <li class="c-menu__item"><a href="/people" onclick="clearOverflow()" class="c-menu__link">People</a></li>
+     <li class="c-menu__item"><a href="/account" onclick="clearOverflow()" class="c-menu__link">Account</a></li>
+     <li class="c-menu__item"><a href="/report" onclick="clearOverflow()" class="c-menu__link">Report</a></li>
+     <li class="c-menu__item"><a href="/support" onclick="clearOverflow()" class="c-menu__link">Support</a></li>
+     <li class="c-menu__item"><a href="#" id="logout" onclick="clearOverflow()" class="c-menu__link">Logout</a></li>
+     <li class="c-menu__item"><a class="c-menu__link" id="version">v0.0.1</a></li>
+  </ul>
+</nav>
+<div id="c-mask" class="c-mask"></div><!-- /c-mask -->
+<div class="top-wrap" id="top-wrap">
+<nav id="toolbar" class="toolbar">
+    <a href="#" id="c-button--push-left" class="c-button"><img id="menuicon" src="/menu.svg"></a>
+    <a id="ghostheader">ghostwall</a>
+    <a href="/camera"><img id="cameraicon" src="/camera.svg"></a>
+    {{#if toggle}}
+    <div id="toggle"><a href="#"><div id="top" style="color: #f7931d">top</div></a><a href="#"><div id="new" style="color: #663399;">new</div></a></div>
+    {{else}}
+    <div id="toggle"><a href="#"><div id="top" style="color: #663399;">top</div></a><a href="#"><div id="new" style="color: #f7931d">new</div></a></div>
+    {{/if}}
+</nav>
+</div>
+<div class="site-wrap" id="site-wrap">
+{{#if isLoading true}}
+  <div id="loadingscreen">
+  {{> spinner}}
+  </div>
+{{else}}
+{{#each photo}}
+<script type="text/javascript">
+    setTimeout(function(){
+    var textLength = $('.{{_id}}').html().length;
+        if (textLength > 30) {
+            $('.{{_id}}').css('font-size', '1.45em');
+        }
+        if (textLength > 50) {
+            $('.{{_id}}').css('font-size', '1.2em');
+        }
+        if (textLength > 75) {
+            $('.{{_id}}').css('font-size', '1em');
+        }
+    }, 100);
+
+</script>
+<br />
+<div id="eachGhost">
+<div id="ghostDiv"></div>
+<a href="#" id="message"><img id="ghostMessage" src="/message.svg"></a>
+<div id="surroundPoints"><img id="ghostUpvote" src="/upvote.svg"><div id="ghostPoints">{{points}}</div><img id="ghostDownvote" src="/downvote.svg"></div>
+<div id="ghostTitle" class="{{_id}}"><div>{{title}}</div></div>
+<div id="ghostBottom"><div id="ghostAge">age: {{moFromNow createdAt withoutSuffix=true}}</div><div id="ghostUsername"><a href="/profile/{{username}}">{{username}}</a></div><div id="ghostType"><img src="/{{type}}.svg"></div></div>
+{{#if checkPhoto type}}
+<div class="ghost-image" id="ghost-{{_id}}" style="visibility: hidden;"><img src="{{url}}"></div>
+{{else}}
+<div class="ghost-image" id="ghost-{{_id}}" style="visibility: hidden;"><video loop webkit-playsinline src="{{url}}" type='video/mov' id="ghostvideo-{{_id}}" playsinline></video></div>
+{{/if}}
+</div>
+{{else}}
+<br />
+<div id="noghosts"><center>There are no ghosts!<br />Either <a href="#" id="findmoredistance">search farther</a> or <a href="/camera">post your own.</a>
+<div id="currentDistance">Current Distance: {{currDist}} miles</div><div id="miles"><a href="#" id="findlessdistance">Less Miles</a> - <a href="#" id="findmoredistance">More Miles</a></div></center></div>
+{{/each}}
+{{#if moreResults}}
+<center>
+    <div id="showMoreResults">
+        <div class="loading">Loading More...</div>
+    </div>
+</center>
+{{else}}
+{{#if moreGhosts}}
+<center><div id="search-farther">Want to see more? <a href="#" id="findmoredistance">Search Farther!</a></div>
+<div id="currentDistance">Current Distance: {{currDist}} miles</div><div id="miles"><a href="#" id="findlessdistance">Less Miles</a> - <a href="#" id="findmoredistance">More Miles</a></div>
+</center>
+{{/if}}
+{{/if}}
+{{/if}}
+</div>
+<script type="text/javascript" src="/menu-push.js"></script>
+</template>

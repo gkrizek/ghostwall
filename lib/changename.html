@@ -1,0 +1,23 @@
+<template name="changename">
+<nav id="toolbar" class="toolbar">
+    <a href="/account"><img id="backicon" src="/back.svg"></a>
+    <a id="ghostheader-center">change name</a>
+</nav>
+<div id="changenameform">
+<p>Change Name:</p>
+<center>
+<input type="text" name="newname" placeholder="Your Name" autocorrect="off">
+</center>
+<br />
+<br />
+<center>
+	<div class="button" id="changebutton">Change</div>
+</center>
+	<script type="text/javascript">
+		$('[name=newname]').keydown(function(e) {if (e.which == 13) {$('#changebutton').click();}});
+	</script>
+</div>
+<script type="text/javascript">
+  inputfield();
+</script>
+</template>

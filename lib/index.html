@@ -1,0 +1,33 @@
+<head>
+<title>Ghostwall</title>
+<meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1, user-scalable=0">
+<meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' 127.0.0.1:* https://*.ghostwall.io wss://*.ghostwall.io:* ws://*.ghostwall.io:*; img-src * data: 'self' 'unsafe-inline' 'unsafe-eval'; media-src * data: 'self' 'unsafe-inline' 'unsafe-eval'">
+
+<script type="text/javascript" src="/menu.js"></script>
+<script type="text/javascript" src="/menubar.js"></script>
+<script type="text/javascript" src="/iphone-inline-video.browser.js"></script>
+<script type="text/javascript" src="/fastclick.js"></script>
+<script type="text/javascript">
+if ('addEventListener' in document) {
+    document.addEventListener('DOMContentLoaded', function() {
+        FastClick.attach(document.body);
+    }, false);
+}
+$(document).on('click', function(e) {
+  var el = $(this);
+  el.click();
+});
+$('#menuicon').on('click', function(e) {
+  var el = $(this);
+  el.click();
+});
+</script>
+</head>
+
+<body>
+{{> layout}}
+</body>
+
+<template name="layout">
+	{{> Template.dynamic template=main}}
+</template>

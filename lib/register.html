@@ -1,0 +1,50 @@
+<template name="register">
+<div id="toolbar" style="visibility: hidden;"></div>
+<div class="loginpage">
+<center>
+	<img class="logo-register" src="/home-logo.svg">
+
+	<form class="login">
+		<input type="text" name="mainusername" autocapitalize="off" autocorrect="off" placeholder="Username" required>
+		<input type="email" name="mainemail" autocapitalize="off" autocorrect="off" placeholder="Email">
+		<input type="password" name="mainpassword" autocapitalize="off" autocorrect="off" placeholder="Password" required>
+		<input type="password" autocapitalize="off" autocorrect="off" name="mainverifypassword" placeholder=" Verify Password" required>
+		<div id="emaildisclaimer">
+		<p>Although an email is not required, you will not be able to recover a lost password without one.  <a href="#" id="moreinfo">More Information</a></p>
+		</div>
+		<script type="text/javascript">  
+		   	$('[name=mainusername]').keypress(function(){
+		    var textLength = $('[name=mainusername]').val().length;
+		        if (textLength > 12) {
+		            $('[name=mainusername]').css('font-size', '1.45em');
+		        }
+		        if (textLength > 20) {
+		            $('[name=mainusername]').css('font-size', '1.2em');
+		        }
+		     });
+		   	$('[name=mainemail]').keypress(function(){
+		   	var emailLength = $('[name=mainemail]').val().length;
+		        if (emailLength > 12) {
+		            $('[name=mainemail]').css('font-size', '1.45em');
+		        }
+		        if (emailLength > 20) {
+		            $('[name=mainemail]').css('font-size', '1.2em');
+		        }
+		    });
+
+		</script>
+        <p><div class="button" id="register">Register</div></p>
+	</form>
+	<script type="text/javascript">
+		$('.login').keydown(function(e) {var key = e.which; if (key == 13) {$('#register').click();}});
+	</script>
+	<div class="noaccount">Already have an account?</div>
+	<div id="register-signin"><a class="register" href="/#signin">Sign In</a></div>
+	</center>
+	<div id="moreinfo-email">
+		<div id="moreinfo-email-text">
+		In order to offer full anonymity, we give the option to not use an email when signing up. If you choose to not use an email with your account, we will have no way to verify you. Therefore, we won't be able to reset your password in the event you forget it. You can always add an email to your account after you already sign up. If you have questions or concerns please email our support at support@ghostwall.io.
+		</div>
+	</div>
+</div>
+</template>

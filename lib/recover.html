@@ -1,0 +1,18 @@
+<template name="recover">
+<center>
+<div id="searchby">
+	Email Address:
+</div>
+
+<p><input type="email" name="searchusername" placeholder="Email" autocapitalize="off" autocorrect="off" ></p>
+<br />
+<div class="button" id="searchbutton">Send</div>
+<br />
+<br />
+<br />
+	<script type="text/javascript">
+		$('[name=searchusername]').keydown(function(e) {if (e.which == 13) {$('#searchbutton').click();}});
+	</script>
+<div class="recoverback"><h2><a href="/">Back</a></h2></div>
+</center>
+</template>

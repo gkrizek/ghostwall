@@ -1,0 +1,21 @@
+<template name="changeemail">
+<nav id="toolbar" class="toolbar">
+    <a href="/account"><img id="backicon" src="/back.svg"></a>
+    <a id="ghostheader-center">change email</a>
+</nav>
+<div id="changeemailform">
+<center>
+<p>New Email:</p>
+<input type="email" name="changeemailform" placeholder="Email">
+<br />
+<br />
+<div class="button" id="searchbutton">Change</div>
+</center>
+	<script type="text/javascript">
+		$('[name=changeemailform]').keydown(function(e) {if (e.which == 13) {$('#searchbutton').click();}});
+	</script>
+</div>
+<script type="text/javascript">
+  inputfield();
+</script>
+</template>

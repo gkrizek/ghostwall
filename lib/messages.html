@@ -1,0 +1,34 @@
+<template name="messages">
+<div class="top-wrap" id="top-wrap">
+<nav id="toolbar" class="toolbar">
+    <a href="/contacts"><img id="backicon" src="/back.svg"></a>
+    <a id="ghostheader">{{recipient}}</a>
+    <a href="/profile/{{recipient}}"><img id="profile-icon" src="/profile.svg"></a>
+</nav>
+</div>
+<div class="site-wrap" id="site-wrap">
+
+<div class="message-div">
+  {{#each messages}}
+    {{#if isMe sender}}
+       <div id="message-width"><div id="message-container" style="float: right; clear: both;"><div id="messagebox">{{message}}</div><div id="messagetime" style="float: right; clear: both;">{{moFromNow createdAt withoutSuffix=false}}</div></div></div>
+    {{else}}
+      <div id="message-width"><div id="message-container" style="float: left; clear: both;"><div id="messagebox">{{message}}</div><div id="messagetime" style="float: left; clear: both;">{{moFromNow createdAt withoutSuffix=false}}</div></div></div>
+    {{/if}}
+  {{else}}
+    <div id="nomessages"><center>There doesn't seem to be any messages! <br />Start the conversation.</center></div>
+  {{/each}}
+  </div>
+<div class="bottomofpage"></div>
+<div id="inputbar">
+<div id="message-field">
+<a href=""><div id="sendbutton"><img id="send" src="/send.svg"></div></a>
+<textarea id="newtext" data-autoresize rows="2"></textarea>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+  textarea();
+</script>
+<script type="text/javascript" src="/autogrow.js"></script>
+</template>

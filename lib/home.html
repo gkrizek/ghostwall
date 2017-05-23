@@ -1,0 +1,58 @@
+<template name="home">
+<div id="toolbar" style="visibility: hidden;"></div>
+<div class="welcome-top">
+<center>
+<img class="logo" src="/home-logo.svg">
+<div id="tagline">Connect with what's around you.</div>
+<div id="welcome-top-text">
+<div id="first-row">
+<div id="camera-icon"><img src="/camera-icon.svg"></div><div id="camera-text">Share photos and videos with the people around you.</div>
+</div>
+<div id="second-row">
+<div id="time-icon"><img src="/time-icon.svg"></div><div id="time-text">All ghosts and messages will expire after 24 hours.</div>
+</div>
+<div id="third-row">
+<div id="anon-icon"><img src="/anon-icon.svg"></div><div id="anon-text">Share content as yourself or anonymously. </div>
+</div>
+<div id="fourth-row">
+<div id="location-icon"><img src="/location-icon.svg"></div><div id="location-text">Experience what's around you, no matter where you are.</div>
+</div>
+</div>
+</center>
+<img id="down-arrow-1" src="/down.svg">
+</div>
+<div id="homepage-spacer"></div>
+<div class="loginpage">
+<a name="signin"></a>
+<center>
+	<img class="logo" src="/home-logo.svg">
+
+	<form class="login">
+		<input type="text" name="mainusername" autocapitalize="off" autocorrect="off" placeholder="Username">
+		<input type="password" name="mainpassword" autocapitalize="off" autocorrect="off" placeholder="Password">
+        <p><div class="button" id="signin">Sign In</div></p>
+	<script type="text/javascript">  
+		   	$('[name=mainusername]').keypress(function(){
+		    var textLength = $('[name=mainusername]').val().length;
+		        if (textLength > 12) {
+		            $('[name=mainusername]').css('font-size', '1.45em');
+		        }
+		        if (textLength > 20) {
+		            $('[name=mainusername]').css('font-size', '1.2em');
+		        }
+		    });
+	</script>
+	</form>
+	<script type="text/javascript">
+		$('.login').keydown(function(e) {if (e.which == 13) {$('#signin').click();document.activeElement.blur();$("[name=mainpassword]").blur();}});
+	</script>
+	<p><a class="forgotpassword" href="/recover">Forgot Password?</a></p>
+	<div class="noaccount">Don't have an account?</div>
+	<br />
+	<a id="register" class="register" href="/register">Register</a>
+	<p>
+	<div class="link"><a id="homebuttonlink">https://ghostwall.io</a></div>
+	</p>
+	</center>
+</div>
+</template>

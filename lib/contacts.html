@@ -1,0 +1,36 @@
+<template name="contacts">
+<nav id="c-menu--push-left" class="c-menu c-menu--push-left">
+  <ul class="c-menu__items">
+    <li class="c-menu__item"><a href="/ghostwall" onclick="clearOverflow()" class="c-menu__link">Ghostwall</a></li>
+    <li class="c-menu__item"><a href="/ghostchat" onclick="clearOverflow()" class="c-menu__link">Ghostchat</a></li>
+    {{#if newMessage true}}
+    <li class="c-menu__item"><a href="/contacts" onclick="clearOverflow()" class="c-menu__link" style="color: #f7931d">Messages</a></li>
+    {{else}}
+    <li class="c-menu__item"><a href="/contacts" onclick="clearOverflow()" class="c-menu__link">Messages</a></li>
+    {{/if}}
+    <li class="c-menu__item"><a href="/myghosts" onclick="clearOverflow()" class="c-menu__link">My Ghosts</a></li>
+    <li class="c-menu__item"><a href="/people" onclick="clearOverflow()" class="c-menu__link">People</a></li>
+     <li class="c-menu__item"><a href="/account" onclick="clearOverflow()" class="c-menu__link">Account</a></li>
+     <li class="c-menu__item"><a href="/report" onclick="clearOverflow()" class="c-menu__link">Report</a></li>
+     <li class="c-menu__item"><a href="/support" onclick="clearOverflow()" class="c-menu__link">Support</a></li>
+     <li class="c-menu__item"><a href="#" id="logout" onclick="clearOverflow()" class="c-menu__link">Logout</a></li>
+     <li class="c-menu__item"><a class="c-menu__link" id="version">v0.0.1</a></li>
+  </ul>
+</nav>
+<div id="c-mask" class="c-mask"></div><!-- /c-mask -->
+<div class="top-wrap" id="top-wrap">
+<nav id="toolbar" class="toolbar">
+    <a href="#" id="c-button--push-left" class="c-button"><img id="menuicon" src="/menu.svg"></a>
+    <a id="ghostheader">contacts</a>
+    <a href="/people"><img id="add" src="/add.svg"></a>
+</nav>
+</div>
+<div class="site-wrap" id="site-wrap">
+{{#each contact}}
+  {{#if isUnread unread}}<a href="/messages/{{user}}"><div id="contactcontainer"><div style="border: 2px solid #f7931d;background: #f7931d; color: #ffffff;" id="eachcontact">{{user}}<img src="/delete-white.svg" id="deletecontact"></div></div></a>{{else}}<a href="/messages/{{user}}"><div id="contactcontainer"><div style="border: 2px solid white; background: white; color: #663399;" id="eachcontact">{{user}}<img src="/delete-purple.svg" id="deletecontact"></div></div></a>{{/if}}
+  {{else}}
+  <div id="nocontacts"><center>No Conversations</center></div>
+{{/each}}
+</div>
+<script type="text/javascript" src="/menu-push.js"></script>
+</template>

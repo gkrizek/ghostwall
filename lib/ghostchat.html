@@ -1,0 +1,75 @@
+<template name="ghostchat">
+<nav id="c-menu--push-left" class="c-menu c-menu--push-left">
+  <ul class="c-menu__items">
+    <li class="c-menu__item"><a href="/ghostwall" onclick="clearOverflow()" class="c-menu__link">Ghostwall</a></li>
+    <li class="c-menu__item"><a href="/ghostchat" onclick="clearOverflow()" class="c-menu__link">Ghostchat</a></li>
+    {{#if newMessage true}}
+    <li class="c-menu__item"><a href="/contacts" onclick="clearOverflow()" class="c-menu__link" style="color: #f7931d">Messages</a></li>
+    {{else}}
+    <li class="c-menu__item"><a href="/contacts" onclick="clearOverflow()" class="c-menu__link">Messages</a></li>
+    {{/if}}
+    <li class="c-menu__item"><a href="/myghosts" onclick="clearOverflow()" class="c-menu__link">My Ghosts</a></li>
+    <li class="c-menu__item"><a href="/people" onclick="clearOverflow()" class="c-menu__link">People</a></li>
+     <li class="c-menu__item"><a href="/account" onclick="clearOverflow()" class="c-menu__link">Account</a></li>
+     <li class="c-menu__item"><a href="/report" onclick="clearOverflow()" class="c-menu__link">Report</a></li>
+     <li class="c-menu__item"><a href="/support" onclick="clearOverflow()" class="c-menu__link">Support</a></li>
+     <li class="c-menu__item"><a href="#" id="logout" onclick="clearOverflow()" class="c-menu__link">Logout</a></li>
+     <li class="c-menu__item"><a class="c-menu__link" id="version">v0.0.1</a></li>
+  </ul>
+</nav>
+<div id="c-mask" class="c-mask"></div><!-- /c-mask -->
+<div class="top-wrap" id="top-wrap">
+<nav id="toolbar" class="toolbar">
+    <a href="#" id="c-button--push-left" class="c-button"><img id="menuicon" src="/menu.svg"></a>
+    <a id="ghostheader-center">ghostchat</a>
+</nav>
+</div>
+<div class="site-wrap" id="site-wrap">
+{{#if isLoading true}}
+  <div id="loadingscreen">
+  {{> spinner}}
+  </div>
+{{else}}
+<div class="message-div">
+  <div id="inputbar">
+  <div id="message-field">
+  <a href=""><div id="sendbutton"><img id="send" src="/send.svg"></div></a>
+  <textarea id="newtext" data-autoresize rows="2"></textarea>
+  </div>
+  </div>
+  <script type="text/javascript">
+    textarea();
+  </script>
+{{#each messages}}
+    {{#if isMe sender}}
+       <div id="message-width"><a href="profile/{{sender}}"><div id="message-container" style="float: right; clear: both;"><div id="messagesender" style="float: right; clear: both;">{{sender}}</div><br /><div id="messagebox">{{message}}</div><div id="messagetime" style="float: right; clear: both;">{{moFromNow createdAt withoutSuffix=false}}</div></div></a></div>
+    {{else}}
+      <div id="message-width"><a href="profile/{{sender}}"><div id="message-container" style="float: left; clear: both;"><div id="messagesender" style="float: left; clear: both;">{{sender}}</div><br /><div id="messagebox">{{message}}</div><div id="messagetime" style="float: left; clear: both;">{{moFromNow createdAt withoutSuffix=false}}</div></div></a></div>
+    {{/if}}
+  {{else}}
+    <div id="nomessages"><center>There doesn't seem to be any messages! <br />Start the conversation or <a href="#" id="findmoredistance">search farther.</a><div id="currentDistance">Current Distance: {{currDist}} miles</div><div id="miles"><a href="#" id="findlessdistance">Less Miles</a> - <a href="#" id="findmoredistance">More Miles</a></div></center></div>
+
+  {{/each}}
+</div>
+<div id="ghostchatBottom">
+{{#if moreResults}}
+<center>
+<div id="chat-loadmore"><a>Load More</a></div>
+</center>
+{{else}}
+{{#if moreChats}}
+<center>
+<div id="chat-findmore">
+Want to see even more? <a href="#" id="findmoredistance">Search Farther!</a>
+</div>
+<div id="currentDistance">Current Distance: {{currDist}} miles</div><div id="miles"><a href="#" id="findlessdistance">Less Miles</a> - <a href="#" id="findmoredistance">More Miles</a></div>
+</center>
+{{/if}}
+{{/if}}
+</div>
+  <div class="bottomofpage"></div>
+{{/if}}
+</div>
+<script type="text/javascript" src="/menu-push.js"></script>
+<script type="text/javascript" src="/autogrow.js"></script>
+</template>

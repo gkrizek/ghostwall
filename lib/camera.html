@@ -1,0 +1,57 @@
+<template name="camera">
+<div id="camera-container">
+<center>
+<nav id="toolbar" class="toolbar" style="visibility: hidden;"></nav>
+<div id="c-mask" class="c-mask" style="visibility: hidden;"></div><!-- /c-mask -->
+<a id="c-button--push-left" class="c-button" style="visibility: hidden;"></a>
+
+	<div id="picture">
+		<div class="bigbutton" id="launchpicture">Picture</div>
+	</div>
+
+	<div id="video">
+		<div class="bigbutton" id="launchvideo">Video</div>
+	</div>
+
+  <div id="uploadalbum">
+    <div class="bigbutton" id="launchroll">Photo Album</div>
+  </div>
+
+	<h2><a href="/">Back</a></h2>
+  </center>
+</div>
+{{#if isLoading true}}
+  <div id="loadingscreen">
+  {{> spinner}}
+  </div>
+{{else}}
+ {{#if photo}}
+        <div id="darkoverlay">        </div>
+        <img id="newphoto" src={{photo}} />
+        <div id="inputsforphoto">
+            <p><textarea type="name" id="photoname" name="photoname" placeholder="Tap to add a title"></textarea></p>
+      </div>
+            <div class="photosubmit"><img id="photosubmit" src="/submit.svg"></div>
+      <div class="photodelete"><img id="photodelete" src="/delete-white.svg"></div>
+    
+  {{/if}}
+  {{#if video}}
+          <div id="darkoverlay">        </div>
+          <video muted loop webkit-playsinline src="{{video}}" type='video/mov' id="ghostvideo" playsinline></video>
+  		   <div id="inputsforphoto">
+            <textarea type="name" id="videoname" name="videoname" placeholder="Tap to add a title"></textarea>
+      </div>
+      <div class="videosubmit"><img id="videosubmit" src="/submit.svg"></div>
+      <div class="videodelete"><img id="videodelete" src="/delete-white.svg"></div>
+  {{/if}}
+  {{#if album}}
+     <div id="darkoverlay">        </div>
+        <img id="newalbum" src={{album}} />
+        <div id="inputsforalbum">
+            <p><textarea type="name" id="albumname" name="albumname" placeholder="Tap to add a title"></textarea></p>
+      </div>
+            <div class="albumsubmit"><img id="albumsubmit" src="/submit.svg"></div>
+      <div class="albumdelete"><img id="albumdelete" src="/delete-white.svg"></div>
+  {{/if}}
+{{/if}}
+</template>

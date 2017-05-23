@@ -1,0 +1,90 @@
+<template name="settings">
+<nav id="c-menu--push-left" class="c-menu c-menu--push-left">
+  <ul class="c-menu__items">
+    <li class="c-menu__item"><a href="/ghostwall" onclick="clearOverflow()" class="c-menu__link">Ghostwall</a></li>
+    <li class="c-menu__item"><a href="/ghostchat" onclick="clearOverflow()" class="c-menu__link">Ghostchat</a></li>
+    {{#if newMessage true}}
+    <li class="c-menu__item"><a href="/contacts" onclick="clearOverflow()" class="c-menu__link" style="color: #f7931d">Messages</a></li>
+    {{else}}
+    <li class="c-menu__item"><a href="/contacts" onclick="clearOverflow()" class="c-menu__link">Messages</a></li>
+    {{/if}}
+    <li class="c-menu__item"><a href="/myghosts" onclick="clearOverflow()" class="c-menu__link">My Ghosts</a></li>
+    <li class="c-menu__item"><a href="/people" onclick="clearOverflow()" class="c-menu__link">People</a></li>
+     <li class="c-menu__item"><a href="/account" onclick="clearOverflow()" class="c-menu__link">Account</a></li>
+     <li class="c-menu__item"><a href="/report" onclick="clearOverflow()" class="c-menu__link">Report</a></li>
+     <li class="c-menu__item"><a href="/support" onclick="clearOverflow()" class="c-menu__link">Support</a></li>
+     <li class="c-menu__item"><a href="#" id="logout" onclick="clearOverflow()" class="c-menu__link">Logout</a></li>
+     <li class="c-menu__item"><a class="c-menu__link" id="version">v0.0.1</a></li>
+  </ul>
+</nav>
+<div id="c-mask" class="c-mask"></div><!-- /c-mask -->
+<div class="top-wrap" id="top-wrap">
+<nav id="toolbar" class="toolbar">
+    <a href="#" id="c-button--push-left" class="c-button"><img id="menuicon" src="/menu.svg"></a>
+    <a id="ghostheader-center">account settings</a>
+</nav>
+</div>
+<div class="site-wrap" id="site-wrap">
+{{#if isLoading true}}
+  <div id="loadingscreen">
+  {{> spinner}}
+  </div>
+{{/if}}
+<div id="settings">
+<center><a href="/profile/{{user.username}}"><div class="button" id="view-profile">View My Profile</div></a><hr /></center>
+<div id="settings-header">Email:</div>
+{{#if isVerified user.emails.[0].verified}}
+    <center><div id="settings-content">
+    {{user.emails.[0].address}} - Verified
+    </div>
+    <br />
+    <a href="/changeemail"><div class="button" id="changeemail">Change Email</div></a>
+    <hr /></center>
+{{else}}
+    {{#if hasEmail}}
+        <center><div id="settings-content">
+        {{user.emails.[0].address}} - Not Verified
+        </div>
+        <br />
+        <a href="/changeemail"><div class="button" id="changeemail">Change Email</div></a>
+        <br />
+        <br />
+        <a href="#" id="resendVerification"><div class="button" id="changeemail">Resend verification email</div></a>
+        <hr /></center>
+    {{else}}
+        <center><div id="settings-content">
+        No Email Added
+        </div>
+        <br />
+        <a href="/changeemail"><div class="button" id="changeemail">Add Email</div></a>
+        <hr /></center>
+    {{/if}}
+{{/if}}
+<div id="settings-header">Password:</div>
+<br />
+<center><a href="/resetpasswordapp"><div class="button" id="changepassword">Change Password</div></a><hr /></center>
+<div id="settings-header">Name:</div>
+<center><div id="settings-content">{{user.name}}</div>
+<br />
+<a href="/changename"><div class="button" id="changename">Change Name</div></a><hr /></center>
+<div id="settings-header">Avatar:</div>
+<br />
+<center><div class="button" id="uploadavatar">Upload New Avatar</div><hr /></center>
+<div id="settings-header">Delete Account:</div>
+<br />
+<center><div class="button" id="deletemyaccount">Delete My Account</div></center>
+<br />
+<div id="settings-content">
+<center>
+This will remove all ghosts, messages, and conversations.
+</center>
+</div>
+<br />
+<br />
+<div id="termsprivacy">
+<center><a style="color: #ffffff; text-decoration: underline;" id="terms">Terms of Service</a>  -  <a style="color: #ffffff; text-decoration: underline;" id="privacy">Privacy Policy</a></center>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="/menu-push.js"></script>
+</template>

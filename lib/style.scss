@@ -1,0 +1,2329 @@
+$purple: #6d2c91;
+//$purple: blue;
+$white: #ffffff;
+$breakpoint-small: 35.5em; /*--568px--*/
+$breakpoint-medium: 40em; /*--640px--*/
+$breakpoint-large: 46em; /*--736px--*/
+
+@font-face {
+  font-family: 'Dosis';
+  src: url('dosis.woff2') format('woff2'),
+  url('dosis.woff') format('woff'),
+  url('dosis.ttf') format('truetype'),
+  url('dosis.svg') format('svg');
+}
+
+@font-face {
+  font-family: 'Dosis-light';
+  src: url('dosis-light.woff2') format('woff2'),
+  url('dosis-light.woff') format('woff'),
+  url('dosis-light.ttf') format('truetype'),
+  url('dosis-light.svg') format('svg');
+}
+
+@font-face {
+  font-family: 'Dosis-bold';
+  src: url('dosis-bold.woff2') format('woff2'),
+  url('dosis-bold.woff') format('woff'),
+  url('dosis-bold.ttf') format('truetype'),
+  url('dosis-bold.svg') format('svg');
+}
+
+html {
+	color: $white;
+	font-family: Dosis;
+}
+
+body {
+	  background: $purple no-repeat center center;
+    margin: 0;
+    padding: 0;
+}
+
+* {
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.IIV::-webkit-media-controls-play-button,
+video::-webkit-media-controls-start-playback-button {
+    opacity: 0;
+    pointer-events: none;
+    width: 5px;
+}
+
+a{
+	color: $white;
+  text-decoration: none;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+    width: 75%;
+}
+
+.loading{
+  font-size: 1.25em;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+#search-farther{
+  font-size: 1.25em;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  a{
+    text-decoration: underline;
+  }
+}
+
+#first-image{
+  width: 400px;
+}
+
+#notfound{
+  margin-top: 25%;
+  font-size: 1.2em;
+  padding-bottom: 30px;
+}
+
+#notfound img {
+  width: 150px;
+  height: auto;
+  padding-bottom:15px;
+}
+
+#first-logo{
+  width: 150px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+#app-info{
+  position: relative;
+  bottom: 50px;
+  left: 25px;
+  opacity: 0.65;
+  max-width: 20px;
+}
+
+#home-info {
+  opacity: 0.65;
+  max-width: 17px;
+  padding-left: 30px;
+}
+
+.forgotpassword{
+	font-size: 1em;
+}
+
+.noaccount{
+  padding-top:10px;
+	font-size: 1.1em;
+}
+
+#register-signin {
+  padding-top: 10px;
+}
+
+#tagline{
+  padding-top: 20px;
+  font-size: 1.75em;
+}
+
+.welcome-top{
+  height: 100vh;
+  position: relative;
+  margin-right: 20px;
+  margin-left: 20px;
+  font-size: 0.75em;
+}
+
+#down-arrow-1{
+  max-width: 25px;
+  position: absolute;
+  bottom: 25px;
+  right: 25px;
+  opacity: 0.75;
+}
+
+#down-arrow-2{
+  max-width: 35px;
+  position: absolute;
+  bottom: 25px;
+  right: 25px;
+  opacity: 0.75;
+}
+
+#down-arrow-3{
+  max-width: 35px;
+  position: absolute;
+  bottom: 25px;
+  right: 25px;
+  opacity: 0.75;
+}
+
+.welcome-middle{
+  height: 100vh;
+    position: relative;
+}
+
+.welcome-bottom{
+  height: 100vh;
+    position: relative;
+}
+
+#first-row{
+  padding-bottom: 25px;
+}
+
+#anon-icon img{
+  width: 40px;
+  float: left;
+  padding-left: 5px;
+  padding-right: 10px;
+  padding-top: 8px;
+}
+
+#anon-text {
+  padding-top: 7px;
+  text-align: left;
+  font-size: 1.25em;
+}
+
+#second-row{
+  padding-bottom: 25px;
+}
+
+#time-icon img{
+  width: 40px;
+  float: left;
+  padding-left: 5px;
+    padding-right: 10px;
+}
+
+#time-text {
+  padding-top: 7px;
+  text-align: left;
+  font-size: 1.25em;
+}
+
+#third-row{
+  padding-bottom: 25px;
+}
+
+#location-icon img{
+  width: 40px;
+  float: left;
+  padding-left: 5px;
+  padding-right: 10px;
+  padding-top: 8px;
+}
+
+#location-text {
+  padding-top: 7px;
+  text-align: left;
+  font-size: 1.25em;
+}
+
+#fourth-row{
+  padding-bottom: 25px;
+}
+
+#camera-icon img{
+  width: 40px;
+  float: left;
+  padding-left: 5px;
+  padding-right: 10px;
+  padding-top: 8px;
+}
+
+#camera-text {
+  padding-top: 7px;
+  text-align: left;
+  font-size: 1.25em;
+}
+
+#welcome-top-text{
+  padding-top: 20px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+#getstarted{
+  padding-top: 10px;
+  font-size: 1.5em;
+}
+
+.loginpage{
+  height: 100vh;
+    position: relative;
+}
+
+.logo{
+	padding-top: 8%;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	width: 50%;
+}
+
+.logo-register{
+  padding-top: 6%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  width: 40%;
+}
+
+#toggle {
+  padding-top: 12px;
+margin: 0 auto;
+color: $purple;
+}
+
+#top {
+  font-size: 0.55em;
+  position: absolute;
+  left: 0;
+  text-align: center;
+  display: inline-block;
+  border: 2px solid $purple;
+  border-left-style: none;
+  border-left:none;
+  width:50%;
+  height: 27px;
+  margin: 0 auto;
+  font-family: Dosis-light;
+  background: $white;
+  color: $purple;
+}
+
+#new {
+  font-size: 0.55em;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  display: inline-block;
+  border: 2px solid $purple;
+  border-right:none;
+  width:50%;
+  height: 27px;
+  margin: 0 auto;
+  font-family: Dosis-light;
+  background: $white;
+  color: $purple;
+}
+
+#currentDistance {
+  padding-top: 15px;
+  padding-bottom: 10px;
+  font-size: 0.85em;
+}
+
+#ghostchatBottom {
+  padding-bottom: 50px;
+}
+
+#miles {
+  font-size: 0.85em;
+  padding-bottom: 20px;
+  a {
+    text-decoration: underline;
+  }
+}
+
+.toolbar {
+	color: $purple;
+	position: fixed;
+    width: 100%;
+    height: 50px;
+    top: 0;
+    margin: 0;
+    padding-top: 20px;
+    background: $white;
+    border-bottom: 1px solid $purple;
+    z-index: 99;
+    text-align: center;
+    font-size: 1.75em;
+    font-family: Dosis-light;
+}
+
+#ghostheader {
+  color: $purple;
+  bottom: 20px;
+}
+
+#ghostheader-center {
+  color: $purple;
+  bottom: 20px;
+  margin-right: 60px;
+}
+
+#ghostheader-center-help {
+  color: $purple;
+  bottom: 20px;
+}
+
+#menuicon {
+  display: inline-block;
+  margin-left: 20px;
+  margin-top: 5px;
+  float: left;
+  width: 35px;
+  height: auto;
+  cursor: pointer;
+}
+
+#cameraicon {
+  display: inline-block;
+  margin-top:5px;
+  margin-right: 20px;
+  float: right;
+  width: 35px;
+  height: auto;
+}
+
+#topicon {
+  display: inline-block;
+  margin-top:5px;
+  margin-right: 20px;
+  float: right;
+  width: 35px;
+  height: auto;
+}
+
+#backicon {
+  display: inline-block;
+  margin-left: 20px;
+  margin-top: 5px;
+  float: left;
+  width: 32px;
+  height: auto;
+  cursor: pointer;
+}
+
+#add {
+    display: inline-block;
+  margin-top:5px;
+  margin-right: 20px;
+  float: right;
+  width: 33px;
+  height: auto;
+}
+
+#profile-icon {
+    display: inline-block;
+  margin-top:5px;
+  margin-right: 20px;
+  float: right;
+  width: 34px;
+  height: auto;
+}
+
+//Info Pages
+
+#helper-background{
+    background:$purple no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+
+#glossary{
+  margin-left: 20px;
+}
+
+#signin-help{
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+#signin-help hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+    width: 95%;
+}
+
+#register-help{
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+#register-help hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+    width: 95%;
+}
+
+#appinfo-title{
+  padding-top: 500px;
+  color: $purple;
+}
+
+#inputbar {
+  position: fixed;
+  z-index: 98;
+  bottom: 0;
+  margin: 0;
+  width: 100%;
+  min-height: 50px;
+  height: auto;
+  color: $purple;
+  background: $white;
+  border-top: 1px solid $purple;
+}
+
+#message-field {
+  font-size: 1.2em;
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+
+#changeemailform {
+  margin-top: 100px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+#changeemailform p {
+  font-size: 2em;
+}
+
+#changenameform {
+  margin-top: 100px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+#changenameform p {
+  font-size: 2em;
+}
+
+#chat-loadmore {
+  padding-bottom: 20px;
+  font-size: 1.25em;
+  a{
+    text-decoration: underline;
+  }
+}
+
+#chat-findmore {
+  padding-bottom: 20px;
+  font-size: 1.25em;
+  a{
+    text-decoration: underline;
+  }
+}
+
+#newtext {
+    font-family: Dosis;
+    color: $purple;
+    font-size: 0.75em;
+    box-sizing: border-box;
+    resize: none;
+    margin-left: 10px;
+    min-height: 32px;
+    width: 80%;
+    border: 1.5px solid $purple;
+    border-radius: 5px;
+    max-height: 150px;
+    overflow: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#send {
+  padding-top: 7px;
+  display: inline-block;
+  max-width: 30px;
+  float: right;
+  margin-right: 13px;
+
+}
+
+*:focus{
+outline: none;
+}
+
+.link {
+margin-left: auto;
+margin-right: auto;
+padding-top: 15px;
+left: 0;
+right: 0;
+}
+
+#emaildisclaimer {
+  font-size: 0.75em;
+  width: 85%;
+  word-wrap: break-word;
+  a{
+    text-decoration: underline;
+  }
+}
+
+#resetpassword {
+  margin-top: 50px;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-bottom: 30px;
+}
+
+#resetpassword p {
+  font-size: 1.5em;
+}
+
+#searchby {
+  margin-top: 150px;
+  text-align: center;
+  font-size: 2em;
+}
+
+#supporthead {
+  margin-top: 100px;
+  text-align: center;
+  font-size: 1.2em;
+  padding-bottom: 30px;
+}
+
+#report-top {
+  margin-top: 100px;
+  text-align: center;
+  font-size: 1em;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+#report-info p {
+  font-size: 1.35em;
+}
+
+#report-field {
+  font-size: 1em;
+  font-family: Dosis-light;
+  border: 2px;
+  border-radius: 5px;
+  color: $purple;
+  width: 68%;
+  height: 100px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#first-header {
+  margin-top: 25px;
+  font-size: 1.75em;
+}
+
+.first-img {
+padding-top: 10px;
+  width: 35%;
+}
+
+.first-open {
+  margin-left: 30px;
+  margin-right:30px;
+}
+
+.first-open p {
+  font-size: 0.75em;
+}
+
+#profile-top {
+  position: relative;
+  width: 100%;
+}
+
+#profile-top:before{
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+
+#profile {
+  font-size: 1.75em;
+}
+
+#settings {
+  margin-top: 100px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 50px;
+  word-wrap: break-word;
+}
+
+#settings a {
+  color: $purple;
+}
+
+#settings hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+    width: 95%;
+}
+
+#settings-header {
+    padding-left: 10px;
+    font-size: 1.5em;
+}
+
+#settings-content {
+  font-size: 1.25em;
+}
+
+input[name=report-name] {
+  font-size: 1.5em;
+  font-family: Dosis-light;
+  border: 0px;
+  color: $purple;
+  width: 68%;
+  padding-right: 10px;
+  padding-left: 10px;
+  border: 2px;
+  border-radius: 5px;
+}
+
+input[name=mainusername]{
+  font-size: 1.5em;
+  font-family: Dosis-light;
+  text-align: center;
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  border-radius: 0;
+  border-bottom: 1px solid white;
+  color: white;
+  width: 55%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+input[name=mainemail]{
+  font-size: 1.5em;
+  font-family: Dosis-light;
+  text-align: center;
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  border-radius: 0;
+  border-bottom: 1px solid white;
+  color: white;
+  width: 55%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+input[name=mainpassword]{
+  font-size: 1.5em;
+  font-family: Dosis-light;
+  text-align: center;
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  border-radius: 0;
+  border-bottom: 1px solid white;
+  color: white;
+  width: 55%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+input[name=mainverifypassword]{
+  font-size: 1.5em;
+  font-family: Dosis-light;
+  text-align: center;
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  border-radius: 0;
+  border-bottom: 1px solid white;
+  color: white;
+  width: 55%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+input[name=changeemailform]{
+  font-size: 1.75em;
+  font-family: Dosis-light;
+  text-align: center;
+    border: 0;
+  outline: 0;
+  background: transparent;
+  border-radius: 0;
+  border-bottom: 1px solid white;
+  color: white;
+  width: 75%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 20px;
+}
+
+input[name=newname]{
+  font-size: 1.75em;
+  font-family: Dosis-light;
+  text-align: center;
+    border: 0;
+  outline: 0;
+  background: transparent;
+  border-radius: 0;
+  border-bottom: 1px solid white;
+  color: white;
+  width: 75%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 20px;
+}
+
+input[name=searchusername]{
+  font-size: 2.25em;
+  font-family: Dosis-light;
+  text-align: center;
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+  border-bottom: 1px solid white;
+  color: white;
+  width: 55%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 20px;
+}
+
+input[name=oldpassword]{
+  font-size: 1.5em;
+  font-family: Dosis-light;
+  text-align: center;
+    border: 0;
+  outline: 0;
+  background: transparent;
+  border-radius: 0;
+  border-bottom: 1px solid white;
+  color: white;
+  width: 75%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+input[name=newpassword]{
+  font-size: 1.5em;
+  font-family: Dosis-light;
+  text-align: center;
+    border: 0;
+  outline: 0;
+  background: transparent;
+  border-radius: 0;
+  border-bottom: 1px solid white;
+  color: white;
+  max-width: 300px;
+  width: 75%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+input[name=verifynewpassword]{
+  font-size: 1.5em;
+  font-family: Dosis-light;
+  text-align: center;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  border-radius: 0;
+  border-bottom: 1px solid white;
+  color: white;
+  width: 75%;
+  max-width: 300px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#emailresetpassword-new{
+  max-width: 250px;
+}
+
+#support-field {
+  font-size: 1em;
+  font-family: Dosis-light;
+  border: 2px;
+  border-radius: 5px;
+  color: $purple;
+  width: 68%;
+  height: 200px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#support-foot {
+padding-top: 50px;
+  font-size: 1em;
+  padding-bottom: 50px;
+}
+
+#report-send {
+  margin-bottom: 50px;
+}
+
+#profile-bottom {
+  padding-top: 20px;
+  padding-bottom: 50px;
+}
+
+#eachcontact {
+  border-radius: 5px;
+  height: 60px;
+  margin-right: 20px;
+  margin-left: 20px;
+  font-size: 1.75em;
+  padding-left: 25px;
+  line-height: 50px;
+}
+
+#contactcontainer{
+  padding-bottom: 30px;
+}
+
+#deletecontact{
+  height: 30px;
+  float: right;
+  margin-top: 15px;
+  margin-right: 15px;
+  display: inline-block;
+}
+
+.message-div{
+  width: 100%;
+  display: inline-block;
+  margin-bottom:25px;
+  overflow: auto;
+}
+
+#message-width{
+  width: 100%;
+  margin: 0;
+  display: inline;
+  position: relative;
+}
+
+#message-container{
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-bottom: 20px;
+  display: inline;
+  position: relative;
+  bottom: 0;
+}
+
+#messagetime{
+  font-size: 0.75em;
+}
+
+#messagesender{
+  font-size: 0.75em;
+}
+
+#messagebox{
+  color: $purple;
+  background-color: $white;
+  padding: 10px;
+  border-radius: 5px;
+  max-width: 200px;
+  word-wrap: break-word;
+  position: relative;
+  text-align: center;
+}
+
+.bottomofpage{
+z-index: 1;
+bottom: 0;
+margin: 0;
+width: 100%;
+min-height: 50px;
+  height: auto;
+  opacity: 0;
+}
+
+.button,
+button,
+.register,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  display: inline-block;
+  height: 38px;
+  padding: 0 20px;
+  color: $purple;
+  text-align: center;
+  font-size: 1.25em;
+  font-weight: 600;
+    font-family: Dosis-light;
+  line-height: 33px;
+  text-decoration: none;
+  white-space: nowrap;
+  background-color: $white;
+  border-radius: 4px;
+  cursor: pointer;
+  user-select: none;
+}
+.button,
+button,
+.register,
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+.button:focus,
+button:focus,
+.register:focus,
+input[type="submit"]:focus,
+input[type="reset"]:focus,
+input[type="button"]:focus {
+  color: $purple ;
+  border-color: $white;
+  outline: 0;
+   user-select: none;
+  }
+.button.button-primary,
+button.button-primary,
+.register.button-primary,
+input[type="submit"].button-primary,
+input[type="reset"].button-primary,
+input[type="button"].button-primary {
+  color: $purple;
+  background-color: $white;
+  border-color: $white;
+   user-select: none;
+  }
+.button.button-primary,
+button.button-primary,
+.register.button-primary,
+input[type="submit"].button-primary,
+input[type="reset"].button-primary,
+input[type="button"].button-primary,
+.button.button-primary:focus,
+button.button-primary:focus,
+.register.button-primary:focus,
+input[type="submit"].button-primary:focus,
+input[type="reset"].button-primary:focus,
+input[type="button"].button-primary:focus {
+  color: $purple;
+  background-color: $white;
+  border-color: $white;
+   user-select: none;
+  }
+
+//Big button for camera
+
+.bigbutton{
+  display: inline-block;
+  height: 100px;
+  width: 250px;
+  //padding: 0 80px;
+  color: $purple;
+  text-align: center;
+  font-size: 2em;
+  font-weight: 600;
+    font-family: Dosis-light;
+  line-height: 90px;
+  text-decoration: none;
+  white-space: nowrap;
+  background-color: $white;
+  border-radius: 4px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.bigbutton{
+  color: $purple ;
+  border-color: $white;
+  outline: 0;
+   user-select: none;
+  }
+.bigbutton.button-primary{
+  color: $purple;
+  background-color: $white;
+  border-color: $white;
+   user-select: none;
+  }
+.bigbutton.button-primary
+.bigbutton.button-primary:focus{
+  color: $purple;
+  background-color: $white;
+  border-color: $white;
+   user-select: none;
+  }
+
+#camera-container{
+  padding-top: 50px;
+}
+
+#picture{
+  padding-bottom: 20px;
+}
+
+#video{
+  padding-bottom: 20px;
+}
+
+#uploadalbum{
+
+}
+
+#loadingscreen{
+    width: 100%;
+    height: 100%;
+    z-index: 98;
+    margin: 0;
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+
+.spinner{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%)
+}
+
+//Photos
+
+#newphoto{
+  height:100%;
+  position: fixed;
+  z-index: 95;
+  margin: 0;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  overflow:hidden;
+}
+
+#newalbum{
+  height:100%;
+  position: fixed;
+  z-index: 95;
+  margin: 0;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  overflow:hidden;
+}
+
+#ghostvideo{
+  height:100%;
+  position: fixed;
+  z-index: 95;
+  margin: 0;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  overflow:hidden;
+}
+
+#darkoverlay{
+    width: 100%;
+    height: 100%;
+    z-index: 96;
+    margin: 0;
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+
+#inputsforphoto{
+  position: fixed;
+  z-index: 97;
+  margin: 0;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+#inputsforalbum{
+  position: fixed;
+  z-index: 97;
+  margin: 0;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+textarea[name=photoname]{
+    font-size: 1.75em;
+  font-family: Dosis-light;
+  text-align: center;
+    border: 0;
+  outline: 0;
+  background: transparent;
+  border-radius: 0;
+  color: white;
+  width: 90%;
+  height: 150px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  }
+
+  textarea[name=videoname]{
+    font-size: 1.75em;
+  font-family: Dosis-light;
+  text-align: center;
+    border: 0;
+  outline: 0;
+  background: transparent;
+  border-radius: 0;
+  color: white;
+  width: 90%;
+  height: 150px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  }
+
+    textarea[name=albumname]{
+    font-size: 1.75em;
+  font-family: Dosis-light;
+  text-align: center;
+    border: 0;
+  outline: 0;
+  background: transparent;
+  border-radius: 0;
+  color: white;
+  width: 90%;
+  height: 150px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  }
+
+#photosubmit{
+  width: 37px;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  z-index: 98;
+}
+
+#photodelete{
+  width: 40px;
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  z-index: 98;
+}
+
+#albumsubmit{
+  width: 37px;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  z-index: 98;
+}
+
+#albumdelete{
+  width: 40px;
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  z-index: 98;
+}
+
+#videosubmit{
+  width: 37px;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  z-index: 98;
+}
+
+#videodelete{
+  width: 40px;
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  z-index: 98;
+}
+
+#rise{
+  margin-top:-30px;
+}
+
+#site-wrap {
+  margin-top: 100px;
+  width: 100%;
+}
+
+.android #homepage-spacer {
+  padding-bottom: 100px;
+}
+
+  /**
+ * Menu overview.
+ */
+.c-menu {
+  position: fixed;
+  z-index: 200;
+  background: $purple no-repeat center center;
+  transition: transform 0.3s;
+}
+
+.c-menu__items {
+      list-style: none;
+      margin: 0;
+      margin-top: 10px;
+      margin-bottom: 15px;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      font-size: 1.5em;
+}
+
+#version {
+  font-size: 0.4em;
+  padding-bottom: 15px;
+}
+
+
+
+/**
+ * Body states.
+ *
+ * When a menu is active, we want to hide the overflows on the body to prevent
+ * awkward document scrolling.
+ */
+
+ //PROBLEM!!!!!!!!!!!!!!!
+body.has-active-menu {
+  overflow: hidden;
+}
+
+/**
+ * Mask component
+ */
+
+.c-mask {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  width: 0;
+  height: 0;
+  background-color: #000;
+  opacity: 0;
+  transition: opacity 0.3s, width 0s 0.3s, height 0s 0.3s;
+}
+
+.c-mask.is-active {
+  width: 100%;
+  height: 100%;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+
+.c-menu--push-left {
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+#nomessages{
+  font-size: 1.15em;
+  margin-right: 15px;
+  margin-left: 15px;
+  a{
+    text-decoration: underline;
+  }
+}
+
+#nocontacts{
+  font-size: 1.25em;
+}
+
+#nomyghosts{
+  padding-top: 15px;
+  font-size: 1.25em;
+  a{
+    text-decoration: underline;
+  }
+}
+
+#noghosts{
+  font-size: 1.15em;
+  a {
+    text-decoration: underline;
+  }
+}
+
+.ghost-image img {
+  height: 100%;
+  z-index: 99;
+  position: fixed;
+  margin: auto;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    overflow: auto;
+}
+
+.ghost-image video {
+  height: 100%;
+  z-index: 99;
+  position: fixed;
+  margin: auto;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    overflow: auto;
+}
+
+//Ghostwall Items
+
+#eachGhost {
+  margin-left: 15px;
+  margin-right: 15px;
+  background-color: white;
+  height: 100px;
+  color: $purple;
+  border: 1.5px solid;
+  position: relative;
+  border-radius: 5px;
+}
+
+#ghostDiv{
+  height: 99%;
+  width: 99%;
+  position: absolute;
+  background: #000000;
+  opacity: 0.5;
+  z-index: 1;
+  background-color: $white;
+  border-radius: 3px;
+}
+//test this on small screen again
+#ghostTitle {
+  font-size:1.85em;
+  padding-top: 7px;
+  padding-left: 10px;
+  max-width: 220px;
+  height: 70px;
+  overflow: hidden;
+  //border: solid 1px;
+  text-overflow: ellipsis;
+  z-index: 5;
+  position: relative;
+}
+
+#ghostTitleMy {
+  font-size:1.75em;
+  padding-top: 7px;
+  padding-left: 10px;
+  width:130px;
+  height: 70px;
+  overflow: hidden;
+  //border: solid 1px;
+  text-overflow: ellipsis;
+  z-index: 5;
+  position: relative;
+}
+
+#ghostMessage{
+  //border: 1px solid black;
+  width: 25px;
+  margin-right: 5px;
+  margin-top: 30px;
+  float: right;
+  z-index: 5;
+  position: relative;
+  padding: 7px;
+}
+
+#surroundPoints{
+  text-align: center;
+  float: right;
+  margin-right: 5px;
+  z-index: 5;
+  position: relative;
+  height: inherit;
+}
+
+#surroundPointsMy{
+  text-align: center;
+  float: right;
+  margin-right: 7px;
+  padding-top: 20px;
+  z-index: 5;
+  position: relative;
+}
+
+#ghostPoints{
+  font-size:2em;
+  padding-left: 1px;
+  top: -15px;
+  z-index: 4;
+  position: relative;
+}
+
+#ghostPointsMy{
+  font-size:2em;
+  padding-left: 1px;
+  z-index: 4;
+  position: relative;
+}
+
+#surroundViewers{
+  text-align: center;
+  float: right;
+  margin-right: 15px;
+  z-index: 5;
+  position: relative;
+}
+
+#surroundViewersMy{
+  text-align: center;
+  float: right;
+  margin-right: 7px;
+  padding-top: 20px;
+  z-index: 5;
+  position: relative;
+}
+
+#ghostViewers{
+  font-size:2em;
+  padding-left: 1px;
+  padding-bottom:5px;
+  z-index: 5;
+  position: relative;
+}
+
+#ghostUpvote{
+  //border: 1px solid black;
+  width: 20px;
+  padding: 10px;
+  z-index: 5;
+//  top: -2px;
+  position: relative;
+}
+
+#ghostDownvote{
+  //border: 1px solid black;
+  width: 20px;
+  padding: 10px;
+  z-index: 5;
+  top: -23px;
+  position: relative;
+}
+
+#ghostBottom {
+  color: $purple;
+  font-size: 0.75em;
+  padding-left: 5px;
+  position: absolute;
+  bottom: 5px;
+  z-index: 5;
+}
+
+#ghostAge{
+  position: relative;
+  display: inline-block;
+}
+
+#ghostUsername {
+  padding-left: 25px;
+  position: relative;
+  display: inline-block;
+}
+
+#ghostUsername a {
+  color: $purple;
+}
+
+#ghostType {
+  padding-left: 25px;
+  position: relative;
+  display: inline-block;
+}
+
+#ghostType img{
+  width: 10px;
+}
+
+@media all and (min-width: 320px) {
+  .c-menu--push-left {
+    width: 250px;
+  }
+}
+
+.c-menu--push-left .c-menu__item {
+  display: block;
+  text-align: center;
+}
+
+.c-menu--push-left .c-menu__item:first-child {
+  border-top: none;
+}
+
+.c-menu--push-left .c-menu__item:last-child {
+  border-bottom: none;
+}
+
+.c-menu--push-left .c-menu__link {
+  display: block;
+  padding: 6px 12px;
+  padding-top: 10px;
+  color: #fff;
+}
+
+.c-menu--push-left .c-menu__close {
+  display: block;
+  padding: 6px 12px;
+  width: 100%;
+}
+
+.c-menu--push-left {
+  top: 0;
+  left: 0;
+  transform: translateX(-100%);
+}
+
+@media all and (min-width: 320px) {
+  .c-menu--push-left {
+    transform: translateX(-300px);
+  }
+}
+
+.c-menu--push-left.is-active {
+  transform: translateX(0);
+}
+
+.site-wrap.has-push-left {
+    transition: margin-left 0.3s;
+    margin-left: 250px;
+}
+
+.top-wrap.has-push-left {
+    transition: margin-left 0.3s;
+    margin-left: 250px;
+}
+
+
+@media all and (min-width: 320px) {
+  .site-wrap.has-push-left {
+      transition: margin-left 0.25s ease-in-out;
+    margin-left: 250px;
+  }
+  .top-wrap.has-push-left {
+      transition: margin-left 0.25s ease-in-out;
+    margin-left: 250px;
+  }
+}
+
+.range-slider {
+  width: 85%
+}
+
+input[type=range] {
+    -webkit-appearance: none;
+  width: 100%;
+  background: transparent;
+}
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-ms-track {
+  width: 100%;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: 1px solid #000000;
+  height: 25px;
+  width: 25px;
+  border-radius: 25px;
+  background: #ffffff;
+  cursor: pointer;
+  margin-top: -7px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+
+input[type=range]::-moz-range-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 25px;
+  width: 25px;
+  border-radius: 25px;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+input[type=range]::-ms-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 25px;
+  width: 25px;
+  border-radius: 25px;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 10px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: #f7931d;
+  border-radius: 1.3px;
+  border: 0.2px solid #010101;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #f7931d;
+}
+
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 10px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: #f7931d;
+  border-radius: 1.3px;
+  border: 0.2px solid #010101;
+}
+
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 10px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  border-width: 16px 0;
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+  background: #f7931d;
+  border: 0.2px solid #010101;
+  border-radius: 2.6px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: #3071a9;
+}
+input[type=range]::-ms-fill-upper {
+  background: #f7931d;
+  border: 0.2px solid #010101;
+  border-radius: 2.6px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: #f7931d;
+}
+
+#moreinfo-email{
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 99;
+}
+
+#moreinfo-email-text{
+    width: 75%;
+    text-align: center;
+    border-radius: 5px;
+    color: $purple;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    z-index: 99;
+    background: $white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+
+/*
+EMAIL VERIFICATION AND PASSWORD RESET
+*/
+
+#verifylogo img{
+  width: 250px;
+  height: auto;
+}
+
+#verifylogo {
+  padding-bottom:40px;
+  padding-top: 75px;
+}
+
+#verifytext {
+  padding-bottom: 50px;
+  margin-right: 30px;
+  margin-left: 30px;
+}
+
+#verifydone a {
+  color: $purple;
+}
+
+#mailresettitle {
+  font-size: 2em;
+}
+
+#verify-page {
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
+@media (max-width: 38em){
+  #verifyerror{
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 30em){
+  #verifysuccess{
+    font-size: 0.75em;
+  }
+  #verifyerror{
+    font-size: 0.85em;
+
+  }
+}
+
+@media (max-width: 28em){
+  #verifysuccess{
+    font-size: 0.75em;
+  }
+  #verifyerror{
+    font-size: 0.7em;
+
+  }
+}
+
+@media (max-width: 24em){
+  #verifysuccess{
+    font-size: 0.65em;
+  }
+  #verifyerror{
+    font-size: 0.6em;
+
+  }
+}
+
+@media (min-height: $breakpoint-small) {
+
+    .logo{
+       padding-top: 10%;
+       width: 55%;
+       padding-bottom: 5%;
+        }
+
+    .logo-register{
+      padding-top: 8%;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+      width: 48%;
+      padding-bottom: 10px;
+       user-select: none;
+    }
+
+      input[name=mainusername]{
+      font-size: 1.75em;
+      width: 60%;
+      }
+
+      input[name=mainemail]{
+        font-size: 1.75em;
+        width: 60%;
+        }
+
+
+      input[name=mainpassword]{
+        font-size: 1.75em;
+        width: 60%;
+        }
+
+      input[name=mainverifypassword]{
+        font-size: 1.75em;
+        width: 60%;
+        }
+
+        .forgotpassword {
+          font-size: 1.15em;
+        }
+
+        .noaccount{
+          padding-top:10px;
+          font-size: 1.2em;
+        }
+
+        .link {
+          font-size: 1.1em;
+          margin-bottom: 25px;
+        }
+
+        #emaildisclaimer {
+          font-size: 0.85em;
+          width: 80%;
+          word-wrap: break-word;
+        }
+
+       .c-menu--push-left .c-menu__link {
+           padding-top: 18px;
+        }
+
+        .first-img {
+            padding-top: 20px;
+            width: 40%;
+            }
+
+        .first-open p {
+            font-size: 1.2em;
+          }
+
+          #picture{
+            padding-bottom: 40px;
+          }
+
+          #video{
+             padding-bottom: 40px;
+          }
+
+        #uploadalbum{
+
+        }
+
+        #welcome-top-text{
+          padding-top: 35px;
+        }
+
+}
+
+@media (min-height: $breakpoint-medium) {
+
+        .logo{
+       width: 60%;
+       padding-bottom: 7%;
+        }
+
+    .logo-register{
+      padding-top: 10%;
+      width: 52%;
+    }
+
+      input[name=mainusername]{
+      font-size: 1.9em;
+      width: 65%;
+      }
+
+      input[name=mainemail]{
+        font-size: 1.9em;
+        width: 65%;
+        }
+
+
+      input[name=mainpassword]{
+        font-size: 1.9em;
+        width: 65%;
+        }
+
+      input[name=mainverifypassword]{
+        font-size: 1.9em;
+        width: 65%;
+        }
+
+        .forgotpassword {
+          font-size: 1.25em;
+        }
+
+        .noaccount{
+          padding-top:35px;
+          font-size: 1.4em;
+        }
+
+        .link {
+          font-size: 1.2em;
+          margin-bottom: 25px;
+        }
+
+        #emaildisclaimer {
+          font-size: 0.95em;
+          width: 80%;
+          word-wrap: break-word;
+        }
+
+        #top {
+          font-size: 0.60em;
+        }
+
+        #new {
+          font-size: 0.60em;
+        }
+
+        .c-menu--push-left .c-menu__link {
+           padding-top: 27px;
+        }
+
+        .first-img {
+            padding-top: 20px;
+            width: 50%;
+            }
+
+        .first-open p {
+            font-size: 1.2em;
+          }
+
+          #camera-container{
+            padding-top: 75px;
+          }
+
+          #ghostTitle{
+            width:240px;
+          }
+
+          #ghostTitleMy{
+            width: 190px;
+          }
+
+          #picture{
+            padding-bottom: 50px;
+          }
+
+          #video{
+             padding-bottom: 50px;
+          }
+
+          #welcome-top-text{
+            padding-top: 30px;
+            margin-right: 10px;
+            margin-left: 10px;
+          }
+
+          #tagline{
+            font-size: 2.15em;
+          }
+
+          #first-row{
+            padding-bottom: 30px;
+          }
+
+          #anon-icon img{
+            width: 50px;
+            float: left;
+            padding-left: 5px;
+            padding-right: 15px;
+            padding-top: 8px;
+          }
+
+          #anon-text {
+            padding-top: 7px;
+            text-align: left;
+            font-size: 1.5em;
+          }
+
+          #second-row{
+            padding-bottom: 30px;
+          }
+
+          #time-icon img{
+            width: 50px;
+            float: left;
+            padding-left: 5px;
+              padding-right: 15px;
+          }
+
+          #time-text {
+            padding-top: 7px;
+            text-align: left;
+            font-size: 1.5em;
+          }
+
+          #third-row{
+            padding-bottom: 30px;
+          }
+
+          #location-icon img{
+            width: 50px;
+            float: left;
+            padding-left: 5px;
+            padding-right: 15px;
+            padding-top: 8px;
+          }
+
+          #location-text {
+            padding-top: 7px;
+            text-align: left;
+            font-size: 1.5em;
+          }
+
+          #fourth-row{
+            padding-bottom: 30px;
+          }
+
+          #camera-icon img{
+            width: 50px;
+            float: left;
+            padding-left: 5px;
+            padding-right: 15px;
+            padding-top: 8px;
+          }
+
+          #camera-text {
+            padding-top: 7px;
+            text-align: left;
+            font-size: 1.5em;
+          }
+}
+
+@media (min-height: $breakpoint-large) {
+
+
+        .logo{
+       width: 60%;
+       padding-bottom: 7%;
+        }
+
+    .logo-register{
+      padding-top: 10%;
+      width: 55%;
+    }
+
+      input[name=mainusername]{
+      font-size: 2em;
+      width: 65%;
+      }
+
+      input[name=mainemail]{
+        font-size: 2em;
+        width: 65%;
+        }
+
+
+      input[name=mainpassword]{
+        font-size: 2em;
+        width: 65%;
+        }
+
+      input[name=mainverifypassword]{
+        font-size: 2em;
+        width: 65%;
+        }
+
+        .forgotpassword {
+          font-size: 1.4em;
+        }
+
+        .noaccount{
+          padding-top:50px;
+          font-size: 1.5em;
+        }
+
+        .link {
+          font-size: 1.4em;
+          margin-bottom: 30px;
+        }
+
+        #emaildisclaimer {
+          font-size: 1em;
+          width: 80%;
+          word-wrap: break-word;
+        }
+
+        #top {
+          font-size: 0.60em;
+        }
+
+        #new {
+          font-size: 0.60em;
+        }
+
+        .c-menu--push-left .c-menu__link {
+           padding-top: 35px;
+        }
+
+        .first-img {
+            padding-top: 20px;
+            width: 55%;
+            }
+
+        .first-open p {
+            font-size: 1.3em;
+          }
+
+         #ghostTitle{
+            width:280px;
+          }
+
+          #ghostTitleMy{
+            width: 220px;
+          }
+
+          #camera-container{
+            padding-top: 100px;
+          }
+
+          #picture{
+            padding-bottom: 60px;
+          }
+
+          #video{
+             padding-bottom: 60px;
+          }
+
+          #photoalbum{
+            padding-bottom: 30px;
+          }
+
+          #welcome-top-text{
+            padding-top: 35px;
+            margin-right: 10px;
+            margin-left: 10px;
+          }
+
+          #tagline{
+            font-size: 2.25em;
+          }
+
+          #first-row{
+            padding-bottom: 40px;
+          }
+
+          #anon-icon img{
+            width: 55px;
+            float: left;
+            padding-left: 5px;
+            padding-right: 15px;
+            padding-top: 8px;
+          }
+
+          #anon-text {
+            padding-top: 7px;
+            text-align: left;
+            font-size: 1.65em;
+          }
+
+          #second-row{
+            padding-bottom: 40px;
+          }
+
+          #time-icon img{
+            width: 55px;
+            float: left;
+            padding-left: 5px;
+              padding-right: 15px;
+          }
+
+          #time-text {
+            padding-top: 12px;
+            text-align: left;
+            font-size: 1.65em;
+          }
+
+          #third-row{
+            padding-bottom: 40px;
+          }
+
+          #location-icon img{
+            width: 55px;
+            float: left;
+            padding-left: 5px;
+            padding-right: 15px;
+            padding-top: 8px;
+          }
+
+          #location-text {
+            padding-top: 7px;
+            text-align: left;
+            font-size: 1.65em;
+          }
+
+          #fourth-row{
+            padding-bottom: 40px;
+          }
+
+          #camera-icon img{
+            width: 55px;
+            float: left;
+            padding-left: 5px;
+            padding-right: 15px;
+            padding-top: 8px;
+          }
+
+          #camera-text {
+            padding-top: 7px;
+            text-align: left;
+            font-size: 1.65em;
+          }
+
+}
