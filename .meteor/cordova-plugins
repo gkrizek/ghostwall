@@ -1,0 +1,10 @@
+cordova-plugin-camera@2.3.1
+cordova-plugin-compat@1.1.0
+cordova-plugin-device@1.1.4
+cordova-plugin-file@4.3.1
+cordova-plugin-inappbrowser@1.5.0
+cordova-plugin-media-capture@https://github.com/gkrizek/cordova-plugin-media-capture.git#4a04eb35deb907e9caa9b889483d50ba13e23191
+cordova-plugin-meteor-webapp@https://github.com/meteor/cordova-plugin-meteor-webapp.git#10d4ddbc907b57c70070e7be4eab44a4b069b966
+cordova-plugin-splashscreen@4.0.1
+cordova-plugin-statusbar@2.2.1
+cordova-plugin-video-editor@1.1.2
