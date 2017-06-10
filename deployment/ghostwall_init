@@ -1,0 +1,117 @@
+#!/bin/bash
+#
+# Service script for running a bundled Meteor application under Forever.
+# Meteor settings JSON file should be in /etc/meteor/[YOUR APP NAME].json,
+# and the METEOR_SETTINGS var below should be updated as appropriate.
+#
+# chkconfig: 345 80 20
+# description: My node app
+#
+
+. /etc/init.d/functions
+
+NAME=ghostwall
+SOURCE_DIR=/var/www/ghostwall
+SOURCE_FILE=main.js
+SOURCE_FILE_PATH=$SOURCE_DIR/bundle/$SOURCE_FILE
+
+export PORT=3000
+export ROOT_URL=https://app.ghostwall.io
+export MONGO_URL=mongodb://username:password@localhost:27017/GHOSTWALL
+export MAIL_URL='smtp://username:password@smtp.mail.net:587/'
+export FOREVER_ROOT=/var/run/forever
+#export DISABLE_WEBSOCKETS=1
+
+user=nginx
+pidfile=/etc/nginx/$NAME.pid
+lockfile=/var/lock/subsys/$NAME
+logfile=/var/log/nodejs/$NAME-node.log
+
+forever=`which forever`
+
+if [ -z "$forever" ]; then
+    echo "ERROR: can't find forever"
+    exit 1
+fi
+
+#runuser="runuser -s /bin/bash $user -c"
+
+export NODE_PATH=$NODE_PATH:/usr/lib/node_modules
+
+start() {
+    echo -n "Starting $NAME node instance: "
+
+    mkdir -p /var/log/nodejs
+    chown $user /var/log/nodejs
+
+    mkdir -p $FOREVER_ROOT
+    chown $user $FOREVER_ROOT
+
+    touch $logfile
+    chown $user $logfile
+
+    touch $pidfile
+    chown $user $pidfile
+
+    $forever start \
+        -l $logfile \
+        -a \
+	-v \
+        --pidFile $pidfile \
+        --minUptime 5000 \
+        --spinSleepTime 2000 \
+        $SOURCE_FILE_PATH > /dev/null 2>&1
+
+    RETVAL=$?
+
+    [ $RETVAL -eq 0 ] && touch $lockfile
+    [ $RETVAL -eq 0 ] && success $"$NAME startup" || failure $"$NAME startup"
+
+    echo
+}
+
+stop() {
+    echo -n "Stopping $NAME node instance: "
+
+    $forever stop $SOURCE_FILE_PATH > /dev/null 2>&1
+
+    RETVAL=$?
+
+    [ $RETVAL -eq 0 ] && rm -f $lockfile
+    [ $RETVAL -eq 0 ] && success $"$NAME shutdown" || failure $"$NAME shutdown"
+
+    echo
+}
+
+rh_status() {
+    status -p $pidfile $NAME
+}
+
+rh_status_q() {
+    rh_status >/dev/null 2>&1
+}
+
+
+case "$1" in
+    start)
+        rh_status_q && exit 0
+        start
+        ;;
+    stop)
+        rh_status_q || exit 0
+        stop
+        ;;
+    restart)
+        stop
+        start
+        ;;
+    status)
+        rh_status
+        ;;
+    *)
+        echo "Usage:  {start|stop|restart|status}"
+        exit 1
+        ;;
+esac
+
+exit $RETVAL
