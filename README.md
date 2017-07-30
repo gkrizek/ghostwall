@@ -1,4 +1,4 @@
-# [GHOSTWALL](https://ghostwall.io)
+# Ghostwall
 
 ### Connect with what's around you
 
